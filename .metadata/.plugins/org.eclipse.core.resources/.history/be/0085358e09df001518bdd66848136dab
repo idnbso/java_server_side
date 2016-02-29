@@ -1,0 +1,8 @@
+package com.lifemichael.samples.coupons.model;
+
+public interface ICouponsDAO {
+	public void addCoupon(Coupon coupon) throws CouponsPlatformException;
+	public void deleteCoupon(int id) throws CouponsPlatformException;
+	public Coupon[] getCoupons() throws CouponsPlatformException;
+	//...
+}

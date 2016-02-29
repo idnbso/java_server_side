@@ -1,0 +1,20 @@
+package com.github.idnbso.javaee.coupons.model;
+
+
+public class CouponsDemo
+{
+
+    
+    public static void main(String[] args)
+    {
+        try
+        {
+            MySQLCouponsDAO couponDataBase = new MySQLCouponsDAO();
+        }
+        catch (MySQLCouponsDAOException e)
+        {
+            throw new MySQLCouponsDAOException(e.getMessage(), e);
+        }
+    }
+
+}

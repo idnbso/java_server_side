@@ -1,0 +1,6 @@
+package com.lifemichael.samples.coupons.model;
+
+public class Coupon
+{
+    
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.github.idnbso.javaee.coupons.model.MySQLCouponsDAOException"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.github.idnbso.javaee.coupons.model.ICouponsDAO"/>
+<fullyQualifiedTypeName name="java.text.MessageFormat"/>
+</qualifiedTypeNameHistroy>

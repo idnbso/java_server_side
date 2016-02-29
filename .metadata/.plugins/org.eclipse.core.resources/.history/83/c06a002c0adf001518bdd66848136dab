@@ -1,0 +1,18 @@
+package com.lifemichael.samples.coupons.model;
+
+public class CouponsPlatformException extends Exception
+{
+
+    public CouponsPlatformException(String message, Throwable cause)
+    {
+        super(message, cause);
+        // TODO Auto-generated constructor stub
+    }
+
+    public CouponsPlatformException(String message)
+    {
+        super(message);
+        // TODO Auto-generated constructor stub
+    }
+
+}

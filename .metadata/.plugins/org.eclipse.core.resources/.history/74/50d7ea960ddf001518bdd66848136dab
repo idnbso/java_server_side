@@ -1,0 +1,11 @@
+package com.github.idnbso.javaee.coupons.model;
+
+public class MySQLCouponsDAOException extends Exception
+{
+
+    /**
+     * default uid
+     */
+    private static final long serialVersionUID = 1L;
+
+}

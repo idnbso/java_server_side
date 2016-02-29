@@ -1,0 +1,47 @@
+package com.lifemichael.samples.coupons.model;
+
+public class Coupon
+{
+    private double price;
+    private String productName;
+    private int id;
+    public Coupon() 
+    {
+        super();
+    }
+    public Coupon(int id, double price, String name) 
+    {
+        this.id = id;
+        this.price = price;
+        this.productName = name;
+    }
+    public double getPrice() 
+    {
+        return price;
+    }
+    public void setPrice(double price) 
+    {
+        this.price = price;
+    }
+    public String getProductName() 
+    {
+        return productName;
+    }
+    public void setProductName(String name) 
+    {
+        this.productName = name;
+    }
+    public int getId() 
+    {
+        return id;
+    }
+    public void setId(int id) 
+    {
+        this.id = id;
+    }
+    @Override
+    public String toString()
+    {
+        return "[" + id + ", " + productName + ", " + "price" + "]";
+    }
+}   

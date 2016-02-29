@@ -1,0 +1,6 @@
+package com.github.idnbso.javaee.coupons.model;
+
+public class MySQLCouponsDAOException extends Exception
+{
+
+}
