@@ -6,4 +6,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.github.idnbso.javaee.coupons.model.ICouponsDAO"/>
 <fullyQualifiedTypeName name="java.text.MessageFormat"/>
+<fullyQualifiedTypeName name="org.hibernate.HibernateException"/>
+<fullyQualifiedTypeName name="com.abelski.samples.hibernate.coupons.CouponsPlatformException"/>
 </qualifiedTypeNameHistroy>

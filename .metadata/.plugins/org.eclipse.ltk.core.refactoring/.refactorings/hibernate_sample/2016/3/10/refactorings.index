@@ -1,0 +1,10 @@
+1456849683274	Rename type 'HibernateDemo'
+1456849691446	Move compilation units
+1456849758420	Infer generic type arguments
+1456850141035	Rename type 'CouponsDemo'
+1456852606935	Delete element
+1456852620606	Copy file
+1456852982670	Rename resource 'storecoupon.hbm2.xml'
+1456853094346	Rename resource 'storecoupon.hbm.xml'
+1456859632604	Rename package 'com.abelski.samples.hibernate.coupons'
+1456859645873	Rename package 'com.abelski.samples.hibernate.products'
