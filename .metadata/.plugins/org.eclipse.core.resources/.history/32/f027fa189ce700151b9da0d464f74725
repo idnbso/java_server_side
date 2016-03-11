@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo.app;
+
+/**
+ * @author Idan Busso
+ * @author Shani Kahila
+ *
+ */
+public class SnippeToDoTest
+{
+    /**
+     * @param args
+     */
+    public static void main(String[] args)
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+}

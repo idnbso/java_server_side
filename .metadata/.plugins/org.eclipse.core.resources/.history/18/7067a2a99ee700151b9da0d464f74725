@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo.model;
+
+import com.github.idnbso.snippetodo.model.data.*;
+
+/**
+ * @author Idan Busso
+ * @author Shani Kahila
+ *
+ */
+public class SnippeToDoTest
+{
+    public static void main(String[] args)
+    {
+        try
+        {
+            ISnippeToDoDAO snippeToDoDB = new HibernateToDoListDAO();
+            Item snippeToDoItemFirst = new Item(1, 1, "test1");
+            Item snippeToDoItemSecond = new Item(2, 1, "test2");
+            snippeToDoDB.addUser(iPadCoupon);
+            snippeToDoDB.addCoupon(iPodCoupon);
+            // couponDB.updateCoupon(1, "iPad3", 25);
+            Coupon[] coupons = couponDB.getCoupons();
+            for (Coupon coupon : coupons)
+            {
+                System.out.println(coupon);
+            }
+        }
+        catch (CouponsPlatformException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+}

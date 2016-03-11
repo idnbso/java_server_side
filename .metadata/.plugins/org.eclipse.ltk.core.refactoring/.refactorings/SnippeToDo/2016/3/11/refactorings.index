@@ -1,0 +1,15 @@
+1457707544724	Rename resource 'storecoupons.hbm.xml'
+1457707832193	Copy file
+1457709065453	Move compilation units
+1457709110952	Rename resource 'storeSnippeToDoItems.hbm.xml'
+1457709125335	Rename resource 'storeSnippeToDoUsers.hbm.xml'
+1457709408059	Copy package
+1457709413513	Delete element
+1457709428871	Copy package
+1457709433459	Delete element
+1457709458719	Rename package 'com.github.idnbso.snippetodo.app'
+1457709476634	Rename package 'com.github.idnbso.snippetodo'
+1457709480903	Move compilation unit
+1457709484679	Delete element
+1457709493861	Rename package 'com.github.idnbso.snippetodo.model.model.data'
+1457711003264	Rename type 'HibernateToDoListDAO'

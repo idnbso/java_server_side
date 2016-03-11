@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo;
+
+/**
+ * @author Idan
+ *
+ */
+public class User
+{
+
+}

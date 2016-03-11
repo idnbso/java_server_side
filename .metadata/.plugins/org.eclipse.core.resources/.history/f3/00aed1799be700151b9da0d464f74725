@@ -1,0 +1,71 @@
+package com.github.idnbso.snippetodo;
+
+/**
+ * @author Idan Busso
+ * @author Shani Kahila
+ *
+ */
+public class Item
+{
+    private int id;
+    private String description;
+        
+    /**
+     * 
+     */
+    public Item()
+    {
+        super();
+    }
+
+    /**
+     * @param id
+     * @param description
+     */
+    public Item(int id, String description)
+    {
+        this.setId(id);
+        this.setDescription(description);
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId()
+    {
+        return id;
+    }
+
+    /**
+     * @return the description
+     */
+    public String getDescription()
+    {
+        return description;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description)
+    {
+        this.description = description;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString()
+    {
+        return String.format("Item [id=%s, description=%s]", id, description);
+    }    
+}

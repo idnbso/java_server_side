@@ -10,8 +10,7 @@ public class HibernateCouponsDemo
         Coupon iPodCoupon = new Coupon(2, "iPod", 50);
 //        couponDB.addCoupon(iPadCoupon);
 //        couponDB.addCoupon(iPodCoupon);
-        Coupon[] coupons;
-        coupons = couponDB.getCoupons();
+        Coupon[] coupons = couponDB.getCoupons();
         printCoupons(coupons);
 
 //        couponDB.updateCoupon(10, "iPad5", 35);

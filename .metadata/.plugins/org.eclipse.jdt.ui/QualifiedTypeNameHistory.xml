@@ -8,4 +8,11 @@
 <fullyQualifiedTypeName name="java.text.MessageFormat"/>
 <fullyQualifiedTypeName name="org.hibernate.HibernateException"/>
 <fullyQualifiedTypeName name="com.abelski.samples.hibernate.coupons.CouponsPlatformException"/>
+<fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.data.Item"/>
+<fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
+<fullyQualifiedTypeName name="javax.transaction.UserTransaction"/>
+<fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.SnippeToDoPlatformException"/>
+<fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.ISnippeToDoDAO"/>
+<fullyQualifiedTypeName name="javax.transaction.Transaction"/>
+<fullyQualifiedTypeName name="org.hibernate.Transaction"/>
 </qualifiedTypeNameHistroy>

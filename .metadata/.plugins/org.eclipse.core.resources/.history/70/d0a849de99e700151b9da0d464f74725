@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo;
+
+/**
+ * @author Idan Busso
+ * @author Shani Kahila
+ *
+ */
+public class User
+{
+
+}

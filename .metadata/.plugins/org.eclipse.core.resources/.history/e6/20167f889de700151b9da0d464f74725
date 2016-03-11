@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo.model;
+
+/**
+ * @author Idan
+ *
+ */
+public interface ISnippeToDoDAO
+{
+    public void addItem(Item item) throws SnippeToDoPlatformException;
+
+    public void Item(int id) throws SnippeToDoPlatformException;
+
+    public Item[] getItems() throws SnippeToDoPlatformException;
+
+    public void updateItem(int id, String productName, double discount) throws SnippeToDoPlatformException;
+}
