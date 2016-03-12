@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo.model;
+
+import com.github.idnbso.snippetodo.model.data.Item;
+
+/**
+ * @author Idan
+ *
+ */
+public class SnippeToDoItemDAO extends HibernateSnippeToDoDAO<Item> implements ISnippeToDoItemDAO
+{
+    /**
+     * the instance reference is set to null if there was no instantiation
+     * beforehand.
+     */
+    private static SnippeToDoItemDAO snippeToDoItemInstance = null;
+
+    /**
+     * Get the single instance object HibernateSnippeToDoDAO class according to
+     * the implementation of the Singleton design pattern.
+     *
+     * @return the single instance object of the HibernateSnippeToDoDAO class.
+     * @throws SnippeToDoPlatformException
+     */
+    public static SnippeToDoItemDAO getInstance() throws SnippeToDoPlatformException
+    {
+        if (snippeToDoItemInstance == null)
+        {
+            snippeToDoItemInstance = new SnippeToDoItemDAO();
+        }
+        return snippeToDoItemInstance;
+    }
+
+    private SnippeToDoItemDAO()
+    {
+        super();
+    }
+}

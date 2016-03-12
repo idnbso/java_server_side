@@ -1,0 +1,52 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo.model;
+
+import com.github.idnbso.snippetodo.model.data.user.*;
+
+import java.util.List;
+
+import com.github.idnbso.snippetodo.model.data.item.*;
+
+/**
+ * @author Idan Busso
+ * @author Shani Kahila
+ *
+ */
+public class SnippeToDoTest
+{
+    public static void main(String[] args)
+    {
+        try
+        {
+            ISnippeToDoUserDAO snippeToDoUserDB = SnippeToDoUserDAO.getInstance();
+            ISnippeToDoItemDAO snippeToDoItemDB = ISnippeToDoItemDAO.getInstance();
+            User idan = new User(1, "Idan");
+            Item itemFirst = new Item(1, 1, "test1");
+            Item itemSecond = new Item(2, 1, "test2");
+            
+            snippeToDoUserDB.create(idan);
+            printObjects(snippeToDoUserDB.getAll());
+            
+            snippeToDoItemDB.create(itemFirst);
+            snippeToDoItemDB.create(itemSecond);
+            printObjects(snippeToDoItemDB.getAll());
+            
+            snippeToDoItemDB.update(new Item(1, 1, "test3"));
+            printObjects(snippeToDoItemDB.getAll());
+        }
+        catch (SnippeToDoPlatformException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void printObjects(List<?> objects)
+    {
+        for (Object object : objects)
+        {
+            System.out.println(object);
+        }
+    }
+}

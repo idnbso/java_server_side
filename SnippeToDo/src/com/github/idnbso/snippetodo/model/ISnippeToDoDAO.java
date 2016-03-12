@@ -3,92 +3,70 @@
  */
 package com.github.idnbso.snippetodo.model;
 
-import com.github.idnbso.snippetodo.model.data.*;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * TODO
  * 
  * @author Idan Busso
  * @author Shani Kahila
- * @see Item
- * @see User
  */
-public interface ISnippeToDoDAO
+public interface ISnippeToDoDAO<T extends Serializable>
 {
     /**
-     * Add a new ToDo item to be added to the database's items table.
+     * Add a new entity to be added to the database.
      * 
-     * @param item The ToDo item to be added to the database items table
-     * @see ISnippeToDoDAO#addItem(Item)
+     * @param entity The entity to be added to the database
+     * @see ISnippeToDoDAO#create(T)
      * @throws SnippeToDoPlatformException
      */
-    public void addItem(Item item) throws SnippeToDoPlatformException;
+    public void create(final T entity) throws SnippeToDoPlatformException;
 
     /**
-     * Add a new registered user to be added to the database's users table.
+     * Delete an existing entity from the database by its id number.
      * 
-     * @param user The registered user to be added to the database users table
-     * @see ISnippeToDoDAO#addUser(User)
+     * @param id The id number of the entity to be deleted from the database
+     * @see ISnippeToDoDAO#deleteById(int)
      * @throws SnippeToDoPlatformException
      */
-    public void addUser(User user) throws SnippeToDoPlatformException;
+    public void deleteById(final int id) throws SnippeToDoPlatformException;
 
     /**
-     * Delete a new ToDo item from the database items table.
+     * Delete an existing entity from the database.
      * 
-     * @param id The id number of the item to be deleted from the database
-     * @see ISnippeToDoDAO#deleteItem(Item)
+     * @param entity The entity to be deleted from the database
+     * @see ISnippeToDoDAO#delete(T)
      * @throws SnippeToDoPlatformException
      */
-    public void deleteItem(int id) throws SnippeToDoPlatformException;
+    public void delete(final T entity) throws SnippeToDoPlatformException;
 
     /**
-     * Delete a registered user from the database users table.
+     * Get an array of all of the entities from the database.
      * 
-     * @param id The id number of the user to be deleted from the database
-     * @see ISnippeToDoDAO#deleteUser(User)
+     * @see ISnippeToDoDAO#getAll()
      * @throws SnippeToDoPlatformException
+     * @return the array of all of the entities from the database
      */
-    public void deleteUser(int id) throws SnippeToDoPlatformException;
+    public List<T> getAll() throws SnippeToDoPlatformException;
 
     /**
-     * Get an array of all of the ToDo items from the database items table.
+     * Get a specific entity reference from the database.
      * 
-     * @see ISnippeToDoDAO#getItems()
+     * @param id The id number of the entity to be retrieved from the database
+     * @see ISnippeToDoDAO#get()
      * @throws SnippeToDoPlatformException
-     * @return the array of all of the ToDo items from the database items table
+     * @return the specific entity reference from the database
      */
-    public Item[] getItems() throws SnippeToDoPlatformException;
+    public T get(final int id) throws SnippeToDoPlatformException;
 
     /**
-     * Get an array of all of the registered users from the database users
-     * table.
+     * Update an existing entity from the database.
      * 
-     * @see ISnippeToDoDAO#getUsers()
+     * @param entity The entity to be updated in the database
+     * @see ISnippeToDoDAO#update(T)
      * @throws SnippeToDoPlatformException
-     * @return the array of all of the registered users from the database
+     * @return the updated entity reference from the database
      */
-    public User[] getUsers() throws SnippeToDoPlatformException;
-
-    /**
-     * Update an existing ToDo item from the database items table.
-     * 
-     * @param id The id number of the item to be updated from the database
-     * @param userId The user id of the user the item belongs to
-     * @param description The description of the ToDo item message
-     * @see ISnippeToDoDAO#updateItem(int, int, String)
-     * @throws SnippeToDoPlatformException
-     */
-    public void updateItem(int id, int userId, String description)
-            throws SnippeToDoPlatformException;
-
-    /**
-     * Update an existing registered user from the database users table.
-     * 
-     * @param id The id number of the user to be updated in the database
-     * @param name The name of the registered user
-     * @see ISnippeToDoDAO#updateUser(int, String)
-     * @throws SnippeToDoPlatformException
-     */
-    public void updateUser(int id, String name) throws SnippeToDoPlatformException;
+    public T update(final T entity) throws SnippeToDoPlatformException;
 }

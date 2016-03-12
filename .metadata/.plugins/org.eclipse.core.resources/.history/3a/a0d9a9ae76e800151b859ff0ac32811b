@@ -1,0 +1,57 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo.model;
+
+import java.io.Serializable;
+
+import com.github.idnbso.snippetodo.model.data.*;
+
+/**
+ * TODO
+ * 
+ * @author Idan Busso
+ * @author Shani Kahila
+ */
+public interface ISnippeToDoDAO<T extends Serializable>
+{
+    /**
+     * Add a new entity to be added to the database.
+     * 
+     * @param entity The entity to be added to the database
+     * @see ISnippeToDoDAO#create(T)
+     * @throws SnippeToDoPlatformException
+     */
+    public void create(final T entity) throws SnippeToDoPlatformException;
+
+    /**
+     * Delete an existing entity by its id from the database.
+     * 
+     * @param id The id number of the entity to be deleted from the database
+     * @see ISnippeToDoDAO#deleteById(int)
+     * @throws SnippeToDoPlatformException
+     */
+    public void deleteById(final int id) throws SnippeToDoPlatformException;
+
+    /**
+     * Get an array of all of the ToDo items from the database items table.
+     * 
+     * @see ISnippeToDoDAO#getItems()
+     * @throws SnippeToDoPlatformException
+     * @return the array of all of the ToDo items from the database items table
+     */
+    public Item[] getAll() throws SnippeToDoPlatformException;
+
+    /**
+     * Update an existing ToDo item from the database items table.
+     * 
+     * @param id The id number of the item to be updated from the database
+     * @param userId The user id of the user the item belongs to
+     * @param description The description of the ToDo item message
+     * @see ISnippeToDoDAO#updateItem(int, int, String)
+     * @throws SnippeToDoPlatformException
+     */
+    public void updateItem(int id, int userId, String description)
+            throws SnippeToDoPlatformException;
+
+}

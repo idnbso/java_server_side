@@ -3,7 +3,11 @@
  */
 package com.github.idnbso.snippetodo.model;
 
-import com.github.idnbso.snippetodo.model.data.*;
+import com.github.idnbso.snippetodo.model.data.user.*;
+
+import java.util.List;
+
+import com.github.idnbso.snippetodo.model.data.item.*;
 
 /**
  * @author Idan Busso
@@ -16,28 +20,32 @@ public class SnippeToDoTest
     {
         try
         {
-            ISnippeToDoDAO snippeToDoDB = HibernateSnippeToDoDAO.getInstance();
-            User snippeToDoUserIdan = new User(1, "Idan");
-            Item snippeToDoItemFirst = new Item(1, 1, "test1");
-            Item snippeToDoItemSecond = new Item(2, 1, "test2");
+            ISnippeToDoDAO<User> snippeToDoUserDB = SnippeToDoUserDAO.getInstance();
+            ISnippeToDoDAO<Item> snippeToDoItemDB = SnippeToDoItemDAO.getInstance();
+            User idan = new User(1, "Idan");
+            Item itemFirst = new Item(1, 1, "test1");
+            Item itemSecond = new Item(2, 1, "test2");
             
-            snippeToDoDB.addUser(snippeToDoUserIdan);
-            printObjects(snippeToDoDB.getUsers());
+            snippeToDoUserDB.create(idan);
+            printObjects(snippeToDoUserDB.getAll());
             
-            snippeToDoDB.addItem(snippeToDoItemFirst);
-            snippeToDoDB.addItem(snippeToDoItemSecond);
-            printObjects(snippeToDoDB.getItems());
+            snippeToDoItemDB.create(itemFirst);
+            snippeToDoItemDB.create(itemSecond);
+            printObjects(snippeToDoItemDB.getAll());
             
-            snippeToDoDB.updateItem(1, 1, "test3");
-            printObjects(snippeToDoDB.getItems());
+            snippeToDoItemDB.update(new Item(1, 1, "test3"));
+            printObjects(snippeToDoItemDB.getAll());
+            
+            snippeToDoItemDB.delete(itemSecond);
+            printObjects(snippeToDoItemDB.getAll());
         }
         catch (SnippeToDoPlatformException e)
         {
-            e.printStackTrace();
+            e.getMessage();
         }
     }
     
-    public static void printObjects(Object[] objects)
+    public static void printObjects(List<?> objects)
     {
         for (Object object : objects)
         {

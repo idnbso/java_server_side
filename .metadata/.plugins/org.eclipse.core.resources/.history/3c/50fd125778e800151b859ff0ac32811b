@@ -1,0 +1,6 @@
+package com.github.idnbso.snippetodo.model;
+
+public interface ISnippeToDoItemDAO<T> extends ISnippeToDoDAO<T>
+{
+
+}

@@ -3,16 +3,23 @@
 <fullyQualifiedTypeName name="com.github.idnbso.javaee.coupons.model.MySQLCouponsDAOException"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.github.idnbso.javaee.coupons.model.ICouponsDAO"/>
 <fullyQualifiedTypeName name="java.text.MessageFormat"/>
 <fullyQualifiedTypeName name="org.hibernate.HibernateException"/>
 <fullyQualifiedTypeName name="com.abelski.samples.hibernate.coupons.CouponsPlatformException"/>
-<fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.data.Item"/>
 <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
 <fullyQualifiedTypeName name="javax.transaction.UserTransaction"/>
-<fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.SnippeToDoPlatformException"/>
 <fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.ISnippeToDoDAO"/>
 <fullyQualifiedTypeName name="javax.transaction.Transaction"/>
 <fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+<fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.data.Item"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.SnippeToDoPlatformException"/>
+<fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.data.user.SnippeToDoUserDAO"/>
+<fullyQualifiedTypeName name="com.github.idnbso.snippetodo.model.data.user.ISnippeToDoUserDAO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.hibernate.cfg.AnnotationConfiguration"/>
 </qualifiedTypeNameHistroy>

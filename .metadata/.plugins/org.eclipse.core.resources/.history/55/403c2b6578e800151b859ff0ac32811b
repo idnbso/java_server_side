@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo.model;
+
+/**
+ * @author Idan
+ *
+ */
+public class SnippeToDoItemDAO extends HibernateSnippeToDoDAO<Item> implements ISnippeToDoItemDAO
+{
+
+}

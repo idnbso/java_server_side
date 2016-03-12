@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package com.github.idnbso.snippetodo.model.data.user;
+
+import com.github.idnbso.snippetodo.model.ISnippeToDoDAO;
+
+/**
+ * @author Idan
+ *
+ */
+public interface ISnippeToDoUserDAO extends ISnippeToDoDAO<User>
+{
+
+}

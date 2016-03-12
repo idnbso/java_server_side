@@ -1,0 +1,12 @@
+package com.github.idnbso.snippetodo.model.data.item;
+
+import com.github.idnbso.snippetodo.model.ISnippeToDoDAO;
+
+/**
+ * @author Idan
+ *
+ */
+public interface ISnippeToDoItemDAO extends ISnippeToDoDAO<Item>
+{
+
+}
