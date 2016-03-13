@@ -33,8 +33,8 @@ public abstract class HibernateSnippeToDoDAO<T extends Serializable> implements 
     private SessionFactory sessionFactory;
 
     /**
-     * HibernateSnippeToDoDAO private constructor for the Singleton design
-     * pattern implementation.
+     * HibernateSnippeToDoDAO protected constructor for inheriting classes to
+     * initialize the session factory.
      * 
      * @throws SnippeToDoPlatformException
      */
@@ -52,7 +52,7 @@ public abstract class HibernateSnippeToDoDAO<T extends Serializable> implements 
     }
 
     /**
-     * Add a new entity to be added to the database.
+     * Create a new entity to be added to the database.
      * 
      * @param entity The entity to be added to the database
      * @see ISnippeToDoDAO#create(T)
@@ -316,11 +316,22 @@ public abstract class HibernateSnippeToDoDAO<T extends Serializable> implements 
         return updatedEntity;
     }
 
+    /**
+     * Set the database class to be used when constructing this generic abstract
+     * class, for the particular storing of the specified  class.
+     * 
+     * @param databaseClass the database class to be used by hibernate
+     */
     protected final void setDatabaseClass(final Class<T> databaseClass)
     {
         this.databaseClass = databaseClass;
     }
 
+    /**
+     * Get the current session created by the session factory.
+     * 
+     * @return the current session created by the session factory
+     */
     protected final Session getCurrentSession()
     {
         return sessionFactory.getCurrentSession();

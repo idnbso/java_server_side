@@ -6,8 +6,11 @@ package com.github.idnbso.snippetodo.model.data.user;
 import com.github.idnbso.snippetodo.model.*;
 
 /**
- * @author Idan
- *
+ * SnippeToDoUserDAO class to provide CRUD operation for User objects to be done
+ * by Hibernate with the database table of users.
+ * 
+ * @author Idan Busso
+ * @author Shani Kahila
  */
 public class SnippeToDoUserDAO extends HibernateSnippeToDoDAO<User> implements ISnippeToDoDAO<User>
 {
@@ -18,8 +21,8 @@ public class SnippeToDoUserDAO extends HibernateSnippeToDoDAO<User> implements I
     private static SnippeToDoUserDAO snippeToDoUserInstance = null;
 
     /**
-     * Get the single instance object SnippeToDoUserDAO class according to
-     * the implementation of the Singleton design pattern.
+     * Get the single instance object SnippeToDoUserDAO class according to the
+     * implementation of the Singleton design pattern.
      *
      * @return the single instance object of the SnippeToDoUserDAO class.
      * @throws SnippeToDoPlatformException
@@ -33,11 +36,15 @@ public class SnippeToDoUserDAO extends HibernateSnippeToDoDAO<User> implements I
         return snippeToDoUserInstance;
     }
 
+    /**
+     * The SnippeToDoUserDAO class is implementing the singleton design pattern,
+     * hence consists of a private default constructor.
+     * @see User
+     */
     private SnippeToDoUserDAO() throws SnippeToDoPlatformException
     {
         super();
         setDatabaseClass(User.class);
     }
- 
 
 }

@@ -1,7 +1,0 @@
-package com.github.idnbso.snippetodo;
-
-public class Item
-{
-    private int id;
-    private String description;
-}

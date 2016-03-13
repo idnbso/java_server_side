@@ -5,27 +5,40 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
+ * Item class represents the SnippeToDo items which consists of the item id, the
+ * user's id creating the item, and the message description itself from the user
+ * input. An Item is stored in the snippetodo database's items table.
+ * 
  * @author Idan Busso
  * @author Shani Kahila
- *
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "items")
 public class Item implements Serializable
 {
-    private static final long serialVersionUID = 1L;
-
+    /**
+     * The Item's id number in the database with auto increment option to
+     * prevent duplicates.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    /**
+     * The Item's user id number which is equilavent to the user created the
+     * item.
+     */
     @Column(nullable = false)
     private int userId;
 
+    /**
+     * The description text of the item.
+     */
     private String description;
 
     /**
-     * 
+     * Item class default constructor.
      */
     public Item()
     {
@@ -33,19 +46,25 @@ public class Item implements Serializable
     }
 
     /**
-     * @param id
-     * @param userId
-     * @param description
+     * Item class main constructor to create a complete Item object to be stored
+     * in the database.
+     * 
+     * @param id The id of the item in database items table
+     * @param userId The user id of the user which created the item
+     * @param description The text describing the item
      */
     public Item(int id, int userId, String description)
     {
+        super();
         this.setId(id);
         this.setDescription(description);
         this.setUserId(userId);
     }
 
     /**
-     * @return the id
+     * Get the item id.
+     * 
+     * @return the id of the item
      */
     public int getId()
     {
@@ -53,7 +72,9 @@ public class Item implements Serializable
     }
 
     /**
-     * @return the description
+     * Get the text description of the item.
+     * 
+     * @return the text description of the item
      */
     public String getDescription()
     {
@@ -61,7 +82,9 @@ public class Item implements Serializable
     }
 
     /**
-     * @return the userId
+     * Get the user id of the user which created the item.
+     * 
+     * @return the userId of the user which created the item
      */
     public int getUserId()
     {
@@ -69,7 +92,9 @@ public class Item implements Serializable
     }
 
     /**
-     * @param userId the userId to set
+     * Set the user id of the user which created the item.
+     * 
+     * @param userId The userId to set
      */
     public void setUserId(int userId)
     {
@@ -77,7 +102,9 @@ public class Item implements Serializable
     }
 
     /**
-     * @param id the id to set
+     * Set the item's id.
+     * 
+     * @param id The id to set
      */
     public void setId(int id)
     {
@@ -85,6 +112,8 @@ public class Item implements Serializable
     }
 
     /**
+     * Set the text description of the item.
+     * 
      * @param description the description to set
      */
     public void setDescription(String description)
@@ -92,8 +121,8 @@ public class Item implements Serializable
         this.description = description;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * hashCode method for Item object.
      * 
      * @see java.lang.Object#hashCode()
      */
@@ -108,8 +137,8 @@ public class Item implements Serializable
         return result;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * The equals method for Item object.
      * 
      * @see java.lang.Object#equals(java.lang.Object)
      */
@@ -151,8 +180,9 @@ public class Item implements Serializable
         return true;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * toString method for the Item object which consists of all of its
+     * properties: id, user id and description.
      * 
      * @see java.lang.Object#toString()
      */

@@ -8,28 +8,34 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
+ * User class represents the SnippeToDo registered users which consists of the
+ * user's id and user's name from the user input. An User is stored in the
+ * snippetodo database's users table.
+ * 
  * @author Idan Busso
  * @author Shani Kahila
- *
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "users")
 public class User implements Serializable
 {
     /**
-     * 
+     * The user's id number in the database with identity option to prevent
+     * duplicates.
      */
-    private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    /**
+     * The name of the user
+     */
     @Column(nullable = false)
     private String name;
 
     /**
-     * 
+     * User class default constructor.
      */
     public User()
     {
@@ -37,17 +43,23 @@ public class User implements Serializable
     }
 
     /**
-     * @param id
-     * @param name
+     * User class main constructor to create a complete User object to be stored
+     * in the database.
+     * 
+     * @param id The id of the user in database items table
+     * @param name The name of the user
      */
     public User(int id, String name)
     {
+        super();
         this.setId(id);
         this.setName(name);
     }
 
     /**
-     * @return the id
+     * Get the user id.
+     * 
+     * @return the id of the user
      */
     public int getId()
     {
@@ -55,7 +67,9 @@ public class User implements Serializable
     }
 
     /**
-     * @return the name
+     * Get the user name.
+     * 
+     * @return the name of the user
      */
     public String getName()
     {
@@ -63,7 +77,9 @@ public class User implements Serializable
     }
 
     /**
-     * @param id the id to set
+     * Set the user's id.
+     * 
+     * @param id the id of the user to set
      */
     public void setId(int id)
     {
@@ -71,15 +87,17 @@ public class User implements Serializable
     }
 
     /**
-     * @param name the name to set
+     * Set the user name
+     * 
+     * @param name the name to set for the user
      */
     public void setName(String name)
     {
         this.name = name;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * hashCode method for User object.
      * 
      * @see java.lang.Object#hashCode()
      */
@@ -93,8 +111,8 @@ public class User implements Serializable
         return result;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * The equals method for user object.
      * 
      * @see java.lang.Object#equals(java.lang.Object)
      */
@@ -132,8 +150,9 @@ public class User implements Serializable
         return true;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * toString method for the User object which consists of all of its
+     * properties: id and name.
      * 
      * @see java.lang.Object#toString()
      */

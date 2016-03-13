@@ -7,19 +7,20 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * TODO
- * 
+ * ISnippeToDoDAO interface provides all of the CRUD operations to be used in
+ * the SnippeToDo database by the users.
+ *  
  * @author Idan Busso
  * @author Shani Kahila
  */
 public interface ISnippeToDoDAO<T extends Serializable>
 {
     /**
-     * Add a new entity to be added to the database.
+     * Create a new entity to be added to the database.
      * 
      * @param entity The entity to be added to the database
      * @see ISnippeToDoDAO#create(T)
-     * @throws SnippeToDoPlatformException
+     * @throws SnippeToDoPlatformExceptions
      */
     public void create(final T entity) throws SnippeToDoPlatformException;
 

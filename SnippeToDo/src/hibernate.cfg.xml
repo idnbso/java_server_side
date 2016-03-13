@@ -14,10 +14,8 @@
 		<property name="show_sql">true</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
+		
 		<mapping class="com.github.idnbso.snippetodo.model.data.user.User"/>
 		<mapping class="com.github.idnbso.snippetodo.model.data.item.Item"/>
-		<!-- Mapping files -->
-		<!--<mapping resource="storeitems.hbm.xml"/> -->
-		<!--<mapping resource="storeusers.hbm.xml"/>  -->
 </session-factory>
 </hibernate-configuration>
