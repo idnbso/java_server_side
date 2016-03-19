@@ -12,9 +12,10 @@ import javax.persistence.*;
  * @author Idan Busso
  * @author Shani Kahila
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "items")
-public class Item
+public class Item implements Serializable
 {
     /**
      * The Item's id number in the database with auto increment option to

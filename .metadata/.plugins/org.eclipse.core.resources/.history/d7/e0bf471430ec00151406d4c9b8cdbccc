@@ -3,6 +3,7 @@
  */
 package com.github.idnbso.snippetodo.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  * @author Idan Busso
  * @author Shani Kahila
  */
-public interface ISnippeToDoDAO<T>
+public interface ISnippeToDoDAO<T extends Serializable>
 {
     /**
      * Create a new entity to be added to the database.

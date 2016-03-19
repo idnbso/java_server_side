@@ -27,7 +27,7 @@ import com.github.idnbso.snippetodo.model.data.user.User;
  * @see Item
  * @see User
  */
-public abstract class HibernateSnippeToDoDAO<T> implements ISnippeToDoDAO<T>
+public abstract class HibernateSnippeToDoDAO<T extends Serializable> implements ISnippeToDoDAO<T>
 {
     private Class<T> databaseClass;
     private SessionFactory sessionFactory;

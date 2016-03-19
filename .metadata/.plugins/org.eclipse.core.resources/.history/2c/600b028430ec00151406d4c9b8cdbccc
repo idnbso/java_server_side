@@ -15,9 +15,10 @@ import javax.persistence.*;
  * @author Idan Busso
  * @author Shani Kahila
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "users")
-public class User
+public class User implements Serializable
 {
     /**
      * The user's id number in the database with identity option to prevent
