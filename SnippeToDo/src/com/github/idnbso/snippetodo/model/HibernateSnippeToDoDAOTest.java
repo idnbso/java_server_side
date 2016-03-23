@@ -36,43 +36,64 @@ public class HibernateSnippeToDoDAOTest
     private List<User> userList;
     private List<Item> itemList;
     private static SessionFactory sessionFactory;
-        
+
     /**
-     * @throws java.lang.Exception
+     * @throws SnippeToDoPlatformException
      */
-    @Before
-    public void setUp() throws SnippeToDoPlatformException
+    @BeforeClass
+    public static void setUpTest() throws SnippeToDoPlatformException
     {
-        // get an instance of the specific data type class to be used
-        snippeToDoUserDB = SnippeToDoUserDAO.getInstance();
-        snippeToDoItemDB = SnippeToDoItemDAO.getInstance();
-        
-        // create lists for storing users and items
-        userList = new ArrayList<User>();
-        itemList = new ArrayList<Item>();
-        // initialize database objects to be tested
-        userList.add(new User(1, "Idan"));
-        userList.add(new User(2, "Shani"));
-        userList.add(new User(3, "Eli"));
-        itemList.add(new Item(1, 1, "TestItem1"));
-        itemList.add(new Item(2, 1, "TestItem2"));
-        itemList.add(new Item(3, 2, "TestItem3"));
-        itemList.add(new Item(4, 2, "TestItem4"));
-        itemList.add(new Item(5, 3, "TestItem5"));
-        itemList.add(new Item(6, 3, "TestItem6"));
-        
-        // The database tables users and items must be empty before each the Unit Test run.
         try
         {
             sessionFactory = new Configuration().configure().buildSessionFactory();
-            Session session = sessionFactory.openSession();
-            session.createSQLQuery("TRUNCATE TABLE users").executeUpdate();
-            session.createSQLQuery("TRUNCATE TABLE items").executeUpdate();
         }
         catch (HibernateException ex)
         {
             throw new SnippeToDoPlatformException(
                     "Initial SessionFactory creation failed: " + ex.getMessage(), ex);
+        }
+    }
+
+    /**
+     * @throws SnippeToDoPlatformException
+     */
+    @Before
+    public void setUp() throws SnippeToDoPlatformException
+    {
+        Session session = null;
+
+        try
+        {
+            // get an instance of the specific data type class to be used
+            snippeToDoUserDB = SnippeToDoUserDAO.getInstance();
+            snippeToDoItemDB = SnippeToDoItemDAO.getInstance();
+
+            // create lists for storing users and items
+            userList = new ArrayList<User>();
+            itemList = new ArrayList<Item>();
+            // initialize database objects to be tested
+            userList.add(new User(1, "Idan"));
+            userList.add(new User(2, "Shani"));
+            userList.add(new User(3, "Eli"));
+            itemList.add(new Item(1, 1, "TestItem1"));
+            itemList.add(new Item(2, 1, "TestItem2"));
+            itemList.add(new Item(3, 2, "TestItem3"));
+            itemList.add(new Item(4, 2, "TestItem4"));
+            itemList.add(new Item(5, 3, "TestItem5"));
+            itemList.add(new Item(6, 3, "TestItem6"));
+
+            // The database tables users and items must be empty
+            session = sessionFactory.openSession();
+            session.createSQLQuery("TRUNCATE TABLE users").executeUpdate();
+            session.createSQLQuery("TRUNCATE TABLE items").executeUpdate();
+        }
+        catch (HibernateException ex)
+        {
+            throw new SnippeToDoPlatformException("Table truncate failed: " + ex.getMessage(), ex);
+        }
+        finally
+        {
+            session.close();
         }
     }
 
@@ -89,7 +110,7 @@ public class HibernateSnippeToDoDAOTest
             assertNull(user);
         }
         userList = null;
-        
+
         for (Item item : itemList)
         {
             snippeToDoItemDB.delete(item);
@@ -97,7 +118,7 @@ public class HibernateSnippeToDoDAOTest
             assertNull(item);
         }
         itemList = null;
-        
+
         snippeToDoUserDB = null;
         assertNull(snippeToDoUserDB);
         snippeToDoItemDB = null;
