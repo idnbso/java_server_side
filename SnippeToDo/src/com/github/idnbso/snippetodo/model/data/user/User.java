@@ -86,7 +86,7 @@ public class User
     }
 
     /**
-     * Set the user name
+     * Set the user name.
      * 
      * @param name the name to set for the user
      */
